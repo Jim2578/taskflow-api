@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-
+import os
 app = FastAPI()
 
-@app.get("/")
+@app.get("/end")
 def root_endpooint():
     return {
         "message": "hello world",
