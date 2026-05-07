@@ -7,3 +7,6 @@ def root_endpooint():
         "message": "hello world",
         "status": "ok"
     }
+
+def hello():
+    print("hello")
