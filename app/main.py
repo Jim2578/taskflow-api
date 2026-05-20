@@ -4,15 +4,8 @@ app = FastAPI()
 @app.get("/")
 def root_endpooint():
     return {
-        "message": "hello world",
+        "message": "allo le monde",
         "status": "ok"
-    }
-
-@app.get("/update")
-def root_endpooint():
-    return {
-        "message": "Application Up-to-date",
-        "versions": "2026.05.20"
     }
 
 def hello():
