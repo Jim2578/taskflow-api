@@ -8,5 +8,12 @@ def root_endpooint():
         "status": "ok"
     }
 
+@app.get("/update")
+def root_endpooint():
+    return {
+        "message": "Application Up-to-date",
+        "versions": "2026.05.20"
+    }
+
 def hello():
     print("hello")
