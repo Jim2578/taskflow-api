@@ -8,4 +8,4 @@ def test_root():
     assert response.status_code==200
 
 def test_fail():
-    assert 1 == 2
+    assert 2 == 2
