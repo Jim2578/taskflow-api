@@ -1,4 +1,4 @@
-name: CI
+name: CI-CD
 
 on:
     pull_request:
@@ -23,3 +23,15 @@ jobs:
 
             - run: ruff check .
             - run: pytest
+    
+    deploy:
+        needs: test
+        if: github.ref == 'refs/heads/main'
+
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Trigger Render Deploy
+            run: curl "$RENDER_PREPROD"
+            env:
+                RENDER_PREPROD: ${{ secrets.RENDER_PREPROD }}
