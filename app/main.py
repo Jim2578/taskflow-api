@@ -17,5 +17,13 @@ def user_endpoint():
         "class": "LIT-B3"
     }
 
+@app.get("/class")
+def class_endpoint():
+    return {
+        "id": 1,
+        "spe": "Concepteur Developpeur d'Application",
+        "class": "LIT-B3"
+    }
+
 def hello():
     print("hello")
