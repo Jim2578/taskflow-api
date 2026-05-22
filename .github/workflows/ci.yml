@@ -24,9 +24,20 @@ jobs:
             - run: ruff check .
             - run: pytest
     
-    deploy:
+    deploy_prod:
         needs: test
         if: github.ref == 'refs/heads/main'
+
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Trigger Render Deploy
+            run: curl "$RENDER_PROD"
+            env:
+                RENDER_PREPROD: ${{ secrets.RENDER_PROD }}
+    deploy_preprod:
+        needs: test
+        if: github.ref == 'refs/heads/develop'
 
         runs-on: ubuntu-latest
 
