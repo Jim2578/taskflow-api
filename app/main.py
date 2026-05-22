@@ -2,7 +2,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/")
-def root_endpooint():
+def root_endpoint():
     return {
         "message": "allo le monde",
         "status": "ok",
@@ -10,7 +10,7 @@ def root_endpooint():
     }
 
 @app.get("/user")
-def root_endpooint():
+def user_endpoint():
     return {
         "id": 1,
         "name": "Jim",
