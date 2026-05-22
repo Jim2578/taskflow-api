@@ -31,7 +31,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-          - name: Trigger Render Deploy
+          - name: Trigger Render Deploy Prod
             run: curl "$RENDER_PROD"
             env:
                 RENDER_PREPROD: ${{ secrets.RENDER_PROD }}
@@ -42,7 +42,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-          - name: Trigger Render Deploy
+          - name: Trigger Render Deploy Preprod
             run: curl "$RENDER_PREPROD"
             env:
                 RENDER_PREPROD: ${{ secrets.RENDER_PREPROD }}
