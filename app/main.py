@@ -9,5 +9,13 @@ def root_endpooint():
         "version": "3.1.0"
     }
 
+@app.get("/user")
+def root_endpooint():
+    return {
+        "id": 1,
+        "name": "Jim",
+        "class": "LIT-B3"
+    }
+
 def hello():
     print("hello")
