@@ -34,7 +34,7 @@ jobs:
           - name: Trigger Render Deploy Prod
             run: curl "$RENDER_PROD"
             env:
-                RENDER_PREPROD: ${{ secrets.RENDER_PROD }}
+                RENDER_PROD: ${{ secrets.RENDER_PROD }}
     deploy_preprod:
         needs: test
         if: github.ref == 'refs/heads/develop'
